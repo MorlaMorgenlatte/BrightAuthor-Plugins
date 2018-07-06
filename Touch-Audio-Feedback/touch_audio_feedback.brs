@@ -24,7 +24,7 @@ Function newtouch(msgPort As Object, userVariables As Object, bsp as Object)
 	s.objectName = "touch_object"
 	s.debug  = true
 	s.player = CreateObject("roAudioPlayer")
-	s.file$ = "ping.mp3"
+	s.file$ = "click01.wav"
 
 	return s
 End Function
@@ -48,7 +48,7 @@ Function touch_ProcessEvent(event As Object) as boolean
 	else if type(event) = "roTouchEvent" then
 			m.bsp.diagnostics.printdebug("Touch Plugin - event detected")
 			'if instr(1, m.file$, "sha1-") < 1 then m.file$ = GetPoolFilePath(m.bsp.syncPoolFiles, m.file$)
-			m.file$ = GetPoolFilePath(m.bsp.syncPoolFiles, "ping.mp3")
+			m.file$ = GetPoolFilePath(m.bsp.syncPoolFiles, "click01.wav")
 			m.bsp.diagnostics.printdebug("audio response: "+m.file$)
 			m.player.playfile(m.file$)
 						
